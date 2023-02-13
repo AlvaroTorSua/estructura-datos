@@ -1,0 +1,108 @@
+
+#include "conio.h"
+#include "stdlib.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+int circulo();
+void acomodar();
+void secuenciaimpares();
+
+int main()
+{
+    int opcion;
+    do {
+           cout << "menu \n";
+           cout << "1.- Area del circulo \n";
+           cout << "2.- Acomodar diferentes numeros \n";
+           cout << "3.- Secuencia de numeros impares \n";
+           cout << "0.- Salir \n";
+           cout << "opcio: \n";
+           cin>> opcion;
+           switch(opcion)
+           {
+            case 1:
+            cout<<circulo();
+            break;
+            case 2:
+            acomodar();
+            break;
+            case 3:
+            secuenciaimpares();
+            break;
+            case 0:
+            cout << "\nFIN DEL PROGRAMA" << endl;
+            break;
+ 
+            default:
+            break;
+        }
+ 
+    } while( opcion != 0);
+
+    system("pause");
+    system("cls");
+}
+
+int circulo()
+{
+    int radio;
+    float pi=3.1416,area;
+    cout<<"Ingrese el radio "<<endl;
+    cin>>radio;
+    area=pi*pow(radio,2);
+    cout<<"El area del circulo es :"<<area<<endl;
+    return area;
+}
+void acomodar()
+{
+    int a,b,c;
+    cout<<"Ingresa numero 1:"<<endl;
+    cin>>a;
+ 
+    cout<<"Ingresa numero 2:"<<endl;
+    cin>>b;
+ 
+    cout<<"Ingresa numero 3:"<<endl;
+    cin>>c;
+ 
+     if(a>b && b>c)
+        cout<<a<<", "<<b<<", "<<c;
+    else{
+        if(a>c && c>b)
+           cout<<a<<", "<<c<<", "<<b;
+        else{
+           if(b>a && a>c)
+               cout<<b<<", "<<a<<", "<<c;
+           else{
+              if(b>c && c>a)
+                cout<<b<<", "<<c<<", "<<a;
+              else{
+                if(c>a && a>b)
+                    cout<<c<<", "<<a<<", "<<b;
+                else{
+                    if(c>b && b>a)
+                       cout<<c<<", "<<b<<", "<<a;
+                }
+              }       
+           }
+        }
+    }
+}
+void secuenciaimpares()
+{
+        int a[100],i,cont=100;
+ 
+    for(i = 0;i>0;i--){
+    	if(i%2 != 0){
+		a[cont]=i;
+        cont--;
+		}
+	}
+ 
+    for(i = 100; i >= cont;i--){
+        cout << a[i]<<endl;
+    }
+}
