@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int numero=100,total=0;
+    while(numero >= 50)
+    {
+        total=total+numero;
+        numero=numero-2;
+        
+    }
+    cout<<"el total es: "<<total;
+    return 0;
+}
