@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int total;
+    total=0;
+    cout<<"vamos a generar numeros de 100 a 50 de 2 en 2"<<endl;
+    for(int i=100;i>=50;i=i-2){
+        cout<<i<<","<<endl;
+        total=total+i;
+    }
+    cout<<total<<" este es el total";
+    return 0;
+}
