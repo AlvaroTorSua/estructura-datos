@@ -1,0 +1,64 @@
+#include "stdafx.h"
+#include <iostream>
+#include"conio.h"
+
+#define MAXCOL 20
+#define MAXROW 20
+
+using namespace std;
+
+void cargar(int matrix[MAXROW][MAXCOL],int n, int m);
+void mostrar(int matrix[MAXROW][MAXCOL],int n, int m);
+int mayor(int matrix[MAXROW][MAXCOL],int n, int m);
+void clasificar(int matrix[MAXROW][MAXCOL],int n, int m);
+int main()
+{
+    int n,m,matrix[MAXROW][MAXCOL];
+    do{
+    cout<<"ingrese el numero de filas"<<endl;
+    cin>>n;
+   } while(n>MAXROW) || (n<=0)
+   do{
+    cout<<"ingrese el numero de columnas"<<endl;
+    cin>>m;
+   } while(n>MAXCOL) || (n<=0)
+   
+    return 0;
+}
+  void cargar(int matrix[MAXROW][MAXCOL],int n, int m);{
+      for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+          cout<<"matriz["<<i<<"]["<<j<<"] ";
+          cin>>matrix[i][j];
+  }
+  void mostrar(int matrix[MAXROW][MAXCOL],int n, int m);{
+      for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+          cout<<"matriz["<<i<<"]["<<j<<"] "<<matrix[i][j]<<"\t";
+          cout<<endl;
+  }
+  int mayor(int matrix[MAXROW][MAXCOL],int n, int m);{
+      int elmayor,i,j;
+      for(i=0;i<n;i++)
+        for(j=0;j<m;j++)
+        {
+            if(elmayor<matrix[i][j])
+            elmayor=matrix[i][j]
+        }
+  }
+  void clasificar(int matrix[MAXROW][MAXCOL],int n, int m);{
+      int mayor;
+      for(int i=0;i<n;i++){
+          for(int j=0;j<n;j++){
+              for(int x=0;x<n;x++){
+                  for(int y=0;y<n;y++){
+                      if(matrix[i][j]>matrix[x][y]){
+                      mayor=matrix[i][j];
+                      matrix[i][j] = matrix[x][y];
+                      matrix[x][y]= mayor;
+                      }
+                }
+            }
+        }   
+    }
+}
