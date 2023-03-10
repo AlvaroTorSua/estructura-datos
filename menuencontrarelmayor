@@ -1,0 +1,120 @@
+#include <iostream>
+
+
+#define MAXCOL 20
+#define MAXROW 20
+
+using namespace std;
+
+void cargar(int matrix[MAXROW][MAXCOL], int n, int m);
+void mostrar(int matrix[MAXROW][MAXCOL], int n, int m);
+int mayor(int matrix[MAXROW][MAXCOL], int n, int m);
+void diagonal(int matrix[MAXROW][MAXCOL], int n, int m);
+void restarmayor(int matrix[MAXROW][MAXCOL], int n, int m);
+int main()
+{
+	int n, m, matriz[MAXROW][MAXCOL];
+	// Validando las filas
+	do
+	{
+		cout << "Ingrese el numero de filas: ";
+		cin >> n;
+	} while ((n > MAXROW) || (n <= 0));
+
+	//Validando columnas
+	do
+	{
+		cout << "Ingrese el numero de columnas: ";
+		cin >> m;
+	} while ((m > MAXCOL) || (m <= 0));
+int opcion;
+  do
+  {cout<<"Menu \n";
+   cout<<"1.-cargar la matriz \n";
+   cout<<"2.-mostrar la matriz \n";
+   cout<<"3.-el mayor valor de la matriz \n";
+   cout<<"4.-La diagonal de la matriz \n";
+   cout<<"5.-restar el mayor de la matriz \n";
+   cout<<"0.-Salir \n";
+   cout<<"Opcion: ";
+   cin>>opcion;
+   switch(opcion)
+   {
+   case 1:
+ 	 cargar(matriz, n, m);
+	 break;
+   case 2:
+	 mostrar(matriz, n, m);
+	 break;
+   case 3:
+	 cout << "El mayor valor de la matriz es: " << mayor(matriz, n, m)<<endl;
+	 break;
+	 case 4:
+	 	diagonal(matriz, n, m);
+	 	break;
+	 case 5:
+	    restarmayor(matriz,n,m);
+	    break;
+   case 0:
+	 cout<<"salir\n";
+	 break;
+   default: 
+	 cout<<"Opcion invalida";
+  }
+  }while(opcion=0);
+	return 0;
+}
+
+void cargar(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int i, j;
+
+	for (i = 0; i < n; i++)
+		for (j = 0; j < m; j++)
+		{
+			cout << "MAT [" << i << "] [" << j << "]: ";
+			cin >> matrix[i][j];
+		}
+}
+
+void mostrar(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int i, j;
+
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < m; j++)
+			cout << "MAT [" << i << "] [" << j << "]: " << matrix[i][j] << "\t";
+		cout << endl;
+	}
+}
+
+int mayor(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int tmayor, i, j;
+
+	tmayor = matrix[0][0];
+	for (i = 0; i < n; i++)
+		for (j = 0; j < m; j++)
+		{
+			if (tmayor < matrix[i][j])
+				tmayor = matrix[i][j];
+
+		}
+	return tmayor;
+}
+void diagonal(int matrix[MAXROW][MAXCOL], int n, int m)
+{
+	int i, j;
+
+	for (i = 0; i < n; i++)
+			cout << "MAT [" << i << "] [" << i << "]: " << matrix[i][i] << "\t";
+		cout << endl;
+}
+void restarmayor(int matrix[MAXROW][MAXCOL], int n, int m){
+    	int laresta,tmayor, i, j;
+ tmayor=mayor(matrix,n,m);
+	for (i = 0; i < n; i++)
+		for (j = 0; j < m; j++)
+			matrix[i][j]=tmayor-matrix[i][j];
+}
