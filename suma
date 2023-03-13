@@ -1,0 +1,104 @@
+
+#include <iostream>
+#define max 20
+#define maz 20
+using namespace std;
+void cargar(int a[max][maz],int n,int m);
+void cargar2(int b[max][maz],int n,int m);
+void mostrar(int a[max][maz],int n, int m);
+void mostrar2(int b[max][maz],int n, int m);
+void transversa(int a[max][maz],int n, int m);
+void transversa2(int b[max][maz],int n, int m);
+void suma(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m);
+int main()
+{
+    int a[max][maz],b[max][maz],c[max][maz],n,m;
+    cout<<"ingrese alto"<<endl;
+    cin>>n;
+    cout<<"ingrese ancho"<<endl;
+    cin>>m;
+    cargar(a,n,m);
+    cargar2(b,n,m);
+    mostrar(a,n,m);
+    mostrar2(b,n,m);
+    transversa(a,n,m);
+    transversa2(b,n,m);
+    suma(a,b,c,n,m);
+    
+    return 0;
+}
+void cargar(int a[max][maz],int n,int m)
+{
+    int i, j;
+ 
+  for(i=0;i<n;i++)
+   for(j=0;j<m;j++)
+     {cout<<"MAT ["<<i<<"] ["<<j<<"]: ";
+      cin>>a[i][j];
+          
+      }
+      
+}
+void cargar2(int b[max][maz],int n,int m)
+{
+    int i, j;
+ cout<<"ingrese matriz 2"<<endl;
+  for(i=0;i<n;i++)
+   for(j=0;j<m;j++)
+     {cout<<"MAT2 ["<<i<<"] ["<<j<<"]: ";
+      cin>>b[i][j];
+          
+      }
+      
+}
+void mostrar(int a[max][maz],int n, int m){
+    int i, j;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT ["<<i<<"] ["<<j<<"]: "<<a[i][j]<<"\t";   
+	cout<<endl;
+      }
+}
+void mostrar2(int b[max][maz],int n, int m){
+    int i, j;
+    cout<<"esta es la matriz 2"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT2 ["<<i<<"] ["<<j<<"]: "<<b[i][j]<<"\t";   
+	cout<<endl;
+      }
+}
+void transversa(int a[max][maz],int n, int m){
+     int i, j;
+     cout<<"esta es la transversa"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT ["<<j<<"] ["<<i<<"]: "<<a[j][i]<<"\t";   
+	cout<<endl;
+      }
+}
+void transversa2(int b[max][maz],int n, int m){
+     int i, j;
+     cout<<"esta es la transversa 2"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT2 ["<<j<<"] ["<<i<<"]: "<<b[j][i]<<"\t";   
+	cout<<endl;
+      }
+}
+void suma(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m){
+    int i, j;
+     cout<<"esta es la suma"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++){
+   c[i][j]=a[i][j]+b[i][j];
+       cout<<"MATsumada ["<<i<<"] ["<<j<<"]: "<<c[i][j]<<"\t";
+   }
+	cout<<endl;
+      }
+    
+    
+    
+}
+
+
