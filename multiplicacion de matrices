@@ -1,0 +1,145 @@
+#include <iostream>
+#define max 20
+#define maz 20
+using namespace std;
+void cargar(int a[max][maz],int n,int m);
+void cargar2(int b[max][maz],int n,int m);
+void mostrar(int a[max][maz],int n, int m);
+void mostrar2(int b[max][maz],int n, int m);
+void transversa(int a[max][maz],int n, int m);
+void transversa2(int b[max][maz],int n, int m);
+void suma(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m);
+void multiplicacion(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m);
+int main()
+{
+    int opcion;
+    int a[max][maz],b[max][maz],c[max][maz],n,m;
+    do {
+        
+        cout << "\n\nMenu de Opciones" << endl;
+        cout << "1. cargar matriz" << endl;
+        cout << "2. mostrar matriz" << endl;
+        cout << "3. matriz cambiando filas por columnas" << endl;
+        cout << "4. sumar matrices" << endl;
+        cout << "5. multiplicar matrices" << endl;
+        cout << "0. SALIR" << endl;
+        
+        cout << "\nIngrese una opcion: ";
+        cin >> opcion;
+        
+        switch (opcion) {
+            case 1:
+    cout<<"ingrese alto"<<endl;
+    cin>>n;
+    cout<<"ingrese ancho"<<endl;
+    cin>>m;
+    cargar(a,n,m);
+    cargar2(b,n,m);
+    break;
+    case 2:
+    mostrar(a,n,m);
+    mostrar2(b,n,m);
+    break;
+    case 3:
+    transversa(a,n,m);
+    transversa2(b,n,m);
+    break;
+    case 4:
+    suma(a,b,c,n,m);
+    case 5:
+    multiplicacion(a,b,c,n,m);
+    break;
+    default:
+    cout<<"ingrese un valor correcto";
+    break;
+        }
+    }while (opcion!=0);
+    
+    return 0;
+}
+void cargar(int a[max][maz],int n,int m)
+{
+    int i, j;
+ 
+  for(i=0;i<n;i++)
+   for(j=0;j<m;j++)
+     {cout<<"MAT ["<<i<<"] ["<<j<<"]: ";
+      cin>>a[i][j];
+          
+      }
+      
+}
+void cargar2(int b[max][maz],int n,int m)
+{
+    int i, j;
+ cout<<"ingrese matriz 2"<<endl;
+  for(i=0;i<n;i++)
+   for(j=0;j<m;j++)
+     {cout<<"MAT2 ["<<i<<"] ["<<j<<"]: ";
+      cin>>b[i][j];
+          
+      }
+      
+}
+void mostrar(int a[max][maz],int n, int m){
+    int i, j;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT ["<<i<<"] ["<<j<<"]: "<<a[i][j]<<"\t";   
+	cout<<endl;
+      }
+}
+void mostrar2(int b[max][maz],int n, int m){
+    int i, j;
+    cout<<"esta es la matriz 2"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT2 ["<<i<<"] ["<<j<<"]: "<<b[i][j]<<"\t";   
+	cout<<endl;
+      }
+}
+void transversa(int a[max][maz],int n, int m){
+     int i, j;
+     cout<<"esta es la transversa"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT ["<<j<<"] ["<<i<<"]: "<<a[j][i]<<"\t";   
+	cout<<endl;
+      }
+}
+void transversa2(int b[max][maz],int n, int m){
+     int i, j;
+     cout<<"esta es la transversa 2"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++)
+       cout<<"MAT2 ["<<j<<"] ["<<i<<"]: "<<b[j][i]<<"\t";   
+	cout<<endl;
+      }
+}
+void suma(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m){
+    int i, j;
+     cout<<"esta es la suma"<<endl;
+     for(i=0;i<n;i++)
+   {for(j=0;j<m;j++){
+   c[i][j]=a[i][j]+b[i][j];
+       cout<<"MATsumada ["<<i<<"] ["<<j<<"]: "<<c[i][j]<<"\t";
+   }
+	cout<<endl;
+      }
+}
+void multiplicacion(int a[max][maz],int b[max][maz],int c[max][maz],int n,int m){
+   int i,j,k;
+   for (i=0;i<n;i++)
+    {for (j=0;j<m;j++)
+       { c[i][j]=0;
+         for (k=0;k<n;k++)
+          c[i][j]=c[i][j]+a[i][k]*b[k][j];
+          cout<<"MAT ["<<i<<"] ["<<j<<"]: "<<c[i][j]<<"\t";   
+	cout<<endl;
+          
+       }
+    } 
+    
+    
+    
+}
