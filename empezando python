@@ -1,0 +1,24 @@
+#pedir y mostrar datos
+nombre = input("ingresar tu nombre: ")
+print (" hola " + nombre + " ¡¡ ")
+#Calculos y operaciones
+print (((3+2)/(2*5))**2)
+#pedir horas y costo por hora y calcular el monto a pagar
+horas = float (input ("ingrese las horas trabajadas: "))
+costo = float (input ("ingrese los costos: "))
+monto= horas*costo
+print(monto)
+#area del circulo
+pi= 3.1415
+radio = float (input(" ingrese el radio: "))
+area = pi*(radio)**2
+print(area)
+#la suma de todos los enteros hasta n
+final= float (input ("Ingrese el numero de enteros: "))
+suma=(n*(n+1))/2
+print(suma)
+#el indice masa corporal
+masa= float(input("ingrese su peso: "))
+altura= float(input("ingrese su altura: "))
+corporal= masa/(altura)**2
+print(corporal)
