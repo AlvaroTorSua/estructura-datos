@@ -1,0 +1,11 @@
+#para tributar un determinado impuesto  debe ser mayor
+dinero=float( input( "diga cuanto gano: "))
+if dinero<1000:
+    print("usted no tiene que pagar este impuesto")
+elif dinero>=1000:
+        edad=float( input("ingrese su edad: "))
+        if edad>16:
+            print("usted tiene que pagar este impuesto")
+        else:
+                print("usted no tiene que pagar este impuesto")
+            
