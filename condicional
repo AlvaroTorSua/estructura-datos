@@ -1,0 +1,6 @@
+#escribir un programa que diga si es mayor de edad
+edad = float(input("ingrese su edad: "))
+if edad>=18:
+    print("usted es mayor de 18")
+elif edad<18:
+    print("usted es menor a 18")
