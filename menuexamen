@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+void generarImpares(int limite);
+int potencia(int base, int exponente);
+void moverAVector(string palabra);
+
+int main() {
+    int opcion = -1;
+    while (opcion != 0) {
+        
+        cout << "1. Generar números impares" << endl;
+        cout << "2. Calcular potencia recursivamente" << endl;
+        cout << "3. Mover elementos de un string a un vector" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Ingrese su opción: ";
+        cin >> opcion;
+        cout << endl;
+        
+        switch(opcion) {
+            case 1: {
+                int limite;
+                cout << "Ingrese el límite para generar números impares: ";
+                cin >> limite;
+                generarImpares(limite);
+                break;
+            }
+            case 2: {
+                int base, exponente;
+                cout << "Ingrese la base: ";
+                cin >> base;
+                cout << "Ingrese el exponente: ";
+                cin >> exponente;
+                cout << "La potencia es: " << potencia(base, exponente) << endl;
+                break;
+            }
+            case 3: {
+                string palabra;
+                cout << "Ingrese una palabra: ";
+                cin >> palabra;
+                moverAVector(palabra);
+                break;
+            }
+            case 0: {
+                cout << "Saliendo del programa..." << endl;
+                break;
+            }
+            default: {
+                cout << "Opción inválida. Intente de nuevo." << endl;
+                break;
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+void generarImpares(int limite) {
+    int num = 3;
+    while (num <= limite) {
+        cout << num << " ";
+        num += 2;
+    }
+    cout << endl;
+}
+
+int potencia(int base, int exponente) {
+    if (exponente == 0) {
+        return 1;
+    } else {
+        return base * potencia(base, exponente - 1);
+    }
+}
+
+void moverAVector(string palabra) {
+    vector<char> letras;
+    for (int i = 0; i < palabra.length(); i++) {
+        letras.push_back(palabra[i]);
+    }
+    cout << "Los elementos de la palabra \"" << palabra << "\" se han movido al vector: ";
+    for (int i = 0; i < letras.size(); i++) {
+        cout << letras[i] << " ";
+    }
+    cout << endl;
+}
