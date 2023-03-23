@@ -1,0 +1,29 @@
+#include <iostream>
+#define max 20
+#define maz 20
+using namespace std;
+void cargar(int a[max][maz],int m, int n);
+void restar(int a[max][maz],int b[max][maz],int m, int n);
+int n=-2;
+int main(){
+    int a[max][maz],b[max][maz],m,z;
+    cin>>m;
+    cin>>z;
+    cargar(a,m,z);
+    restar(a,b,m,z);
+    return 0;
+    
+}
+void cargar(int a[max][maz],int m, int n){
+    for(int i=0;i<m;i++)
+        for(int j=0;j<n;j++)
+            cin>>a[i][j];
+}
+void restar(int a[max][maz],int b[max][maz],int m, int n){
+for(int i=0;i<m;i++)
+        for(int j=0;j<n;j++){
+            b[i][j]=a[i][j]+n;
+            cout<<"mat ["<<i<<"]  ["<<j<<"]"<<b[i][j]<<"\t";
+            cout<<endl;
+        }
+}
