@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string nombre_producto;
+    double precio_unitario;
+    int num_unidades;
+
+    cout << "Introduzca el nombre del producto: ";
+    getline(cin, nombre_producto);
+
+    cout << "Introduzca el precio unitario: ";
+    cin >> precio_unitario;
+
+    cout << "Introduzca el número de unidades: ";
+    cin >> num_unidades;
+
+    double coste_total = precio_unitario * num_unidades;
+
+    cout << fixed << setprecision(2);
+    cout << nombre_producto << " " << setw(8) << setfill('0') << (int)precio_unitario << "." << setw(2) << setfill('0') << (int)(precio_unitario * 100) % 100 << " ";
+    cout << setw(3) << setfill('0') << num_unidades << " " << setw(8) << setfill('0') << (int)coste_total << "." << setw(2) << setfill('0') << (int)(coste_total * 100) % 100 << endl;
+
+    return 0;
+}
