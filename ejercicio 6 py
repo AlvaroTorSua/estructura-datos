@@ -1,0 +1,7 @@
+materias = ["matemáticas", "fisica", "quimica", "Historia", "Lengua"]
+for i in range(len(materias)-1,-1,-1):
+    nota = float(input("¿Qué nota has sacado en " + materias[i] + "?"))
+    if nota >= 51:
+        materias.pop(i)
+print("Tienes que repetir " + str(materias))
+
