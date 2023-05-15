@@ -1,0 +1,38 @@
+#include <iostream>
+#include "Cola.h"
+#include "Dato.h"
+
+using namespace std;
+
+int main()
+{
+    Nodo* inicio = NULL, * fin = NULL; //Punteros libres para el manejo de la cola
+    int opc = 0, respuesta = 0;
+    Cola colita;
+    do {
+        cout << "1. LA COLA ESTA VACIA?" << endl;
+        cout << "2. ENCOLAR" << endl;
+        cout << "3. DESENCOLAR" << endl;
+        cout << "0. FINALIZAR" << endl;
+        cout << "Opcion: "; cin >> opc;
+        switch (opc) {
+        case 1:
+            if (colita.Vacio())
+                cout << "La cola se encuentra vacia" << endl;
+            else
+                cout << "Existe elemento(s) dentro de la cola" << endl;
+            break;
+        case 2:
+            colita.Encolar(Dato elemento);
+            break;
+        case 3:
+            colita.Desencolar();
+            break;
+
+        }
+
+    } while (opc != 0);
+
+
+    return 0;
+}
